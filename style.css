@@ -406,9 +406,15 @@ html {
     justify-content: center;
     align-items: center;
     margin-top: 10px;
+    margin-bottom: 30px;
   }
 
   .order-screen {
-    height: 100vh;
+    height: 110vh;
     width: 100%;
+    box-sizing: border-box !important;
+  }
+
+  .siparis-baslik {
+    margin-top: 20px !important;
   }
