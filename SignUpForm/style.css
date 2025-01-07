@@ -1,0 +1,409 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-family: Quicksand, sans-serif;
+    
+}
+
+body {
+    height: 100%;
+    width: 100%;
+}
+
+html {
+    font-size: 62.5%;
+    height: 100vh;
+    width: 100%;
+    background-image: url('./image/background.jpg'); 
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center; 
+    background-attachment: fixed;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-wrapper {
+    width: 100%;
+    height: 100%;
+    background-color: #eee; 
+    box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.banner {
+    position: absolute;
+    top: 25%;
+    left: 5rem;
+    text-align: center;
+    color: #fff;
+    width: 30rem;
+    z-index: 100;
+    transition: left 0.8s;
+}
+
+.container.change .banner {
+    left: -30rem;
+}
+
+.banner h1 {
+    font-size: 4rem;
+    margin-bottom: 3rem;
+}
+
+.banner p {
+    font-size: 2rem;
+}
+
+.green-bg {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #3a3681, #272283);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 50;
+    transition: width 1.5s cubic-bezier(.19,1,0.22,1);
+}
+
+.container.change .green-bg {
+    left: -50rem;
+}
+
+.green-bg button {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 16rem;
+    height: 5rem;
+    background-color: transparent;
+    border: .1rem solid #fff;
+    border-radius: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    color: #fff;
+    cursor: pointer;
+}
+
+.signup-form {
+    width: 60rem;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10rem 0;
+    transition: left 1.5s cubic-bezier(.19, 1, .22, 1);
+}
+
+.container.change .signup-form {
+    left: -10rem;
+}
+
+.signup-form h1 {
+    font-size: 4rem;
+    color: #272283;
+}
+
+.social-media {
+    display: flex;
+}
+
+.social-media i {
+    width: 4rem;
+    height: 4rem;
+    border: 0.1rem solid #777;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 2rem;
+    font-size: 2rem;
+    color: #555;
+}
+
+.signup-form p {
+    font-size: 1.8rem;
+    color: #555;
+    margin-bottom: 2rem;
+}
+
+.input-group {
+    position: relative;
+}
+
+.input-group input {
+    width: 28rem;
+    height: 5rem;
+    padding: 1rem 1rem 1rem 3rem;
+    background-color: #ddd;
+    border: none;
+    border-radius: 5rem;
+}
+
+.input-group i {
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    color: #555;
+}
+
+.signup-form button {
+    width: 16rem;
+    height: 5rem;
+    background-color: #272283;
+    border: none;
+    border-radius: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    color: #fff;
+    margin-top: 3rem;
+    cursor: pointer;
+}
+
+#login-screen {
+    z-index: 999;
+}
+
+/* Devam kısmı */
+
+.screen {
+    display: none;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  .screen.active {
+    display: block;
+    
+  }
+  .custom-button {
+    background-color: #605EA1;
+    color: #FFF;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 30px 0;
+    border: 1px solid #373380;
+    
+  }
+  .product-card {
+    background-color: #373380;
+    border: 2px solid #111027;
+    border-radius: 5px;
+    text-align: center;
+    display: inline-block;
+    width: 45%;
+    height: 200px;
+    margin: 5px;
+  }
+
+  .product-card-img {
+    margin-top: 10px;
+    height: 75px;
+    width: 75px;
+    border-radius: 5px;
+  }
+
+  #baslik {
+    margin-top: 150px;
+    font-size: 4rem;
+    color: #373380;
+    font: bolder;
+  }
+
+  .main-baslik {
+    margin-bottom: 100px;
+    font: caption;
+    font-weight: bolder;
+    font-size: xx-large;
+  }
+
+  #metin {
+    padding-top: 10px;
+    font-size: 1.5rem;
+    color: #eaeaeb;
+  }
+
+  .drone-takip {
+    font-size: 2rem !important;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+    color: #272283 !important;
+  }
+
+
+
+      /* Sepet İkonu Stili */
+  .cart-container {
+    position: relative;
+    display: inline-block;
+    top: 15px;
+  }
+
+  
+
+  
+
+  /* Sepet Özeti Stili */
+  .cart-summary {
+    top: 10px;
+    right: 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.4rem;
+  }
+
+  #cart-icon {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+  }
+
+  #cart-total-items,
+  #cart-total-price {
+    font-weight: bold;
+  }
+
+
+      /* Ürün Kartındaki Miktar ve Butonların Stili */
+  .product-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Butonlar ve miktar arasında boşluk */
+  }
+
+  .quantity {
+    font-size: 1.6rem;
+    font-weight: bold;
+    min-width: 20px; /* Sabit genişlik */
+    text-align: center;
+    margin-bottom: 20px;
+    color: #ccc;
+  }
+
+
+  .footer-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #373380;
+    border-top: 3px solid #fff;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0;
+    z-index: 20; /* Üstte görünmesi için */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Hafif gölge efekti */
+  }
+  
+  .footer-button {
+    background-color: #605EA1;
+    color: white;
+    border-color: 1px #fff;
+    padding: 10px 20px 5px;
+    font-size: 1.4rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .footer-button.active {
+    background-color: #28a745; /* Yeşil renk */
+    color: white;
+    font-weight: bold;
+    border: 2px solid #1e7e34; /* Çerçeve vurgusu */
+  }
+  
+  .footer-button:hover {
+    background-color: #1d1366;
+  }
+
+
+  #payment-summary {
+    background-color: #605EA1;
+    border: 1px solid #373380;
+    border-radius: 5px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    width: 45%;
+    height: 200px;
+    margin: 5px;
+    font-size: 15px;
+    color: #f3f3f3;
+    
+  }
+
+  .payment-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+
+  .header {
+    background-color: #373380;
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    padding: 0 1rem;
+    align-items: center;
+  }
+
+  .header-text {
+    font-size: 1.5rem;
+    color: #e2e2e2;
+    justify-content: center;
+    align-items: center;
+    font: bolder;
+  }
+
+  .header-logo-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .header-img {
+    padding: 3px 0px 0px 125px;
+    scale: 1.5;
+  }
+
+
+  #arttır-eksilt {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+  }

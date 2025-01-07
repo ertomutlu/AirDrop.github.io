@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Festival Drone</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    
+    <div id="login-screen"  class="container screen active" >
+      <div class="form-wrapper">
+        <div class="banner">
+          <h1>Festivale Hoşgeldin!</h1>
+          <p>Giriş yap ve eğlencenin tadını çıkart.</p>
+        </div>
+        <div class="green-bg">
+          <button type="button">Giriş</button>
+        </div>
+        <form class="signup-form">
+          <h1>Hesap Oluştur</h1>
+          <div class="social-media">
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-linkedin-in"></i>
+          </div>
+          <p>ya da email ile giriş yap</p>
+          <div class="input-group">
+            <i class="fas fa-user"></i>
+            <input type="text" placeholder="İsim" />
+          </div>
+          <div class="input-group">
+            <i class="fas fa-envelope"></i>
+            <input type="email" placeholder="Email" />
+          </div>
+          <div class="input-group">
+            <i class="fas fa-lock"></i>
+            <input type="password" placeholder="Şifre" />
+          </div>
+          <div onclick="showScreen('main-screen')"><button type="button" >Giriş</button></div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Ana Ekran -->
+  <div id="main-screen" class="screen ">
+    <div class="header">
+      <div class="header-logo-box">  
+        <img class="header-img" src="./image/header.png" alt="">
+      </div>
+      <div class="header-text">AirDrop</div>
+    </div>
+    <h1 id="baslik" class="main-baslik">AirDrop</h1>
+    <button class="custom-button" onclick="showScreen('order-screen')">Ürünleri İncele</button>
+  </div>
+  
+
+
+  <!-- Sipariş Ekranı -->
+  
+  <div id="order-screen" class="screen">
+    <div class="header">
+      
+      <div class="header-logo-box">
+        <img class="header-img" src="./image/header.png" alt="">
+      </div>
+      <div class="header-text">AirDrop</div>
+    </div>
+    <h2 id="baslik">Sipariş Ver</h2>
+    <div>
+      <div class="product-card">
+        <img class="product-card-img" src="./image/su.jpg" alt="">
+        <p id="metin">Su <br> 10 TL</p>
+        <div class="product-actions">
+          <button id="arttır-eksilt" class="custom-button" onclick="updateCart('Su', 10, -1)">-</button>
+          <span id="quantity-su" class="quantity">0</span>
+          <button id="arttır-eksilt" class="custom-button" onclick="updateCart('Su', 10, 1)">+</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <img class="product-card-img" src="./image/kola.jpg" alt="">
+        <p id="metin">Kola <br> 15 TL</p>
+        <div class="product-actions">
+          <button id="arttır-eksilt" class="custom-button" onclick="updateCart('Kola', 15, -1)">-</button>
+          <span id="quantity-kola" class="quantity">0</span>
+          <button id="arttır-eksilt" class="custom-button" onclick="updateCart('Kola', 15, 1)">+</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <img class="product-card-img" src="./image/meyve.jpg" alt="">
+        <p id="metin">Meyve Suyu <br> 12 TL</p>
+        <div class="product-actions">
+          <button id="arttır-eksilt" class="custom-button" onclick="updateCart('Meyve Suyu', 12, -1)">-</button>
+          <span id="quantity-meyve-suyu" class="quantity">0</span>
+          <button id="arttır-eksilt" class="custom-button" onclick="updateCart('Meyve Suyu', 12, 1)">+</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <img class="product-card-img" src="./image/kahve.jpg" alt="">
+        <p id="metin">Kahve <br> 20 TL</p>
+        <div class="product-actions">
+          <button id="arttır-eksilt" class="custom-button" onclick="updateCart('Kahve', 20, -1)">-</button>
+          <span id="quantity-kahve" class="quantity">0</span>
+          <button id="arttır-eksilt" class="custom-button" onclick="updateCart('Kahve', 20, 1)">+</button>
+        </div>
+      </div>
+    </div>
+    <button class="custom-button" onclick="showScreen('main-screen')">Geri Git</button>
+    <button class="custom-button" onclick="showScreen('payment-screen')">Ödemeye Geç</button>
+  </div>
+
+  <!-- Ödeme Ekranı -->
+  <div id="payment-screen" class="screen">
+    <div class="header">
+      <div class="header-logo-box">
+        <img class="header-img" src="./image/header.png" alt="">
+      </div>
+      <div class="header-text">AirDrop</div>
+    </div>
+    <h2 id="baslik">Ödeme</h2>
+    <div class="payment-box">
+      <div id="payment-summary">
+      <!-- Dinamik olarak ürünler buraya eklenecek -->
+      </div>
+    </div>
+    
+    <button class="custom-button" onclick="showScreen('order-screen')">Geri Git</button>
+    <button class="custom-button" onclick="showScreen('tracking-screen')">Ödemeyi Tamamla</button>
+  </div>
+
+  <!-- Takip Ekranı -->
+  <div id="tracking-screen" class="screen">
+    <div class="header">
+      <div class="header-logo-box">
+        <img class="header-img" src="./image/header.png" alt="">
+      </div>
+      <div class="header-text">AirDrop</div>
+    </div>
+    <h2 id="baslik">Teslimat Takibi</h2>
+    <p class="drone-takip" id="metin">Drone Konumu:</p>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2996.362930469115!2d36.3143753!3d41.3227208!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x408879cfd218fd1f%3A0x6b6973980735ebf5!2sOndokuz%20May%C4%B1s%20%C3%9Cniversitesi%20Mimarl%C4%B1k%20Fak%C3%BCltesi!5e0!3m2!1str!2str!4v1736192631720!5m2!1str!2str" width="300" height="225" style="border:1;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <p class="drone-takip" id="metin">Durum: Drone yola çıktı</p>
+    <button class="custom-button" onclick="showScreen('delivery-screen')">Teslim Alma</button>
+  </div>
+
+  <!-- Teslimat Ekranı -->
+  <div id="delivery-screen" class="screen">
+    <div class="header">
+      <div class="header-logo-box">
+        <img class="header-img" src="./image/header.png" alt="./image/">
+      </div>
+      <div class="header-text">AirDrop</div>
+    </div>
+    <h2 id="baslik">Teslim Alma</h2>
+    <p id="metin">Drone QR Kodunu Taratın</p>
+    <button class="custom-button" onclick="showScreen('main-screen')">Anasayfa</button>
+    <button class="custom-button">QR Kod Tara</button>
+    
+    <p id="metin">Siparişiniz teslim edildi. Afiyet olsun!</p>
+  </div>
+
+
+
+  <!-- foooter -->
+  <div id="footer-nav" class="footer-nav">
+    
+
+    <!-- Sepet İkonu -->
+    <div  class="cart-summary footer-button" onclick="showScreen('payment-screen')">
+      <img id="cart-icon" src="./image/cart.png" alt="Sepet">
+    </div>
+
+    <div  class="cart-summary footer-button" onclick="showScreen('main-screen')">
+      <img id="cart-icon" src="./image/home.png" alt="Sepet">
+    </div>
+
+    <div class="cart-summary footer-button" onclick="showScreen('tracking-screen')">
+      <img id="cart-icon" src="./image/siparis.png" alt="Sepet">
+    </div>
+  </div>
+
+    
+
+    <script src="script.js"></script>
+  </body>
+</html>
